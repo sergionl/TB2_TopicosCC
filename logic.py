@@ -161,9 +161,11 @@ class People:
         self.data["infected"] = [ i in rows_infected for i in self.data.index ]
 
     def GetLoc(self):
+        # Get the location
         return [(x,y) for x,y in zip(self.data.geometry.x , self.data.geometry.y)]
 
     def GetAge(self, asBoolean:bool):
+        # Get the GroupAge
         return list( self.data.ageAllowed if asBoolean else self.data.ageGroup )
 
 
